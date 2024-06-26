@@ -47,7 +47,7 @@ restartButton.addEventListener("click", () => {
 
 setupButton.addEventListener("click", () => {
   gameOverDialog.close();
-  setupDialog.showModal();
+  window.location.reload();
 });
 
 class Timer {
@@ -247,15 +247,16 @@ function checkWin(row, col) {
 }
 
 function checkDraw() {
-  for (let row = 0; row < boardSize; row++) {
-    for (let col = 0; col < boardSize; col++) {
-      if (board[row][col] === "") {
-        return false;
+    for (let row = 0; row < boardSize; row++) {
+      for (let col = 0; col < boardSize; col++) {
+        if (board[row][col] === "") {
+          return false; 
+        }
       }
     }
+    return true; 
   }
-  return true;
-}
+  
 
 function showStatus(message) {
   statusElement.querySelector(".turn").textContent = message;
