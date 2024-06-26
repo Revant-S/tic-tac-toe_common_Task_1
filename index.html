@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Tic-Tac-Toe Game</h1>
+        <dialog id="setupDialog">
+           <div class="form">
+            <form method="dialog">
+                <label for="boardSize" class="formElements">Select Board Size:</label>
+                <select id="boardSize" class="formElements">
+                    <option value="3">3x3 (Standard)</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                </select><br><br>
+                <label for="timer" class="formElements">Select Timer (Total Time Of Each Player):</label>
+                <select id="timer" class="formElements">
+                    <option value="20">20 seconds</option>
+                    <option value="25">25 seconds</option>
+                    <option value="15">15 seconds</option>
+                    <option value="10">10 seconds</option>
+                    <option value="5">5 seconds</option>
+                </select><br><br>
+                <button id="startBtn">Start Game</button>
+            </form>
+           </div>
+        </dialog>
+
+        <div class="game">
+            <div id="board" >
+            </div>
+            <div class="status" id="status">
+                <div class="timers">
+                    <div id="playerXTimer" class="timer">Player X Timer: 20 seconds</div>
+                    <div id="playerOTimer" class="timer">Player O Timer: 20 seconds</div>
+                </div>
+                <p class="turn">Player X's Turn</p>
+                <p class="winner" id="winner"></p>
+            </div>
+            
+            <button class="btn" id="resetBtn">Reset Game</button>
+        </div>
+
+        <dialog id="gameOverDialog">
+          <div class="form">
+            <form method="dialog">
+                <p id="gameOverMessage"></p>
+                <button id="restartBtn">Restart Game</button>
+                <button id="setupBtn">Setup</button>
+            </form>
+          </div>
+        </dialog>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
