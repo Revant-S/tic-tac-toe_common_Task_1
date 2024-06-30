@@ -156,7 +156,7 @@ function renderBoard() {
       cell.dataset.row = i;
       cell.dataset.col = j;
       cell.textContent = board[i][j];
-      cell.addEventListener("click", handleCellClick);
+      cell.addEventListener("click", handleCellClick, { once: true });
       boardElement.appendChild(cell);
     }
   }
@@ -190,12 +190,12 @@ function handleCellClick(event) {
 function switchPlayerTurn() {
   if (currentPlayer === "X") {
     currentPlayer = "O";
-    timerX.pause(); // Pause Player X's timer
-    timerO.start(); // Resume Player O's timer
+    timerX.pause();
+    timerO.start();
   } else {
     currentPlayer = "X";
-    timerO.pause(); // Pause Player O's timer
-    timerX.start(); // Resume Player X's timer
+    timerO.pause();
+    timerX.start();
   }
   updateCurrentPlayerTimer();
   showStatus(`Player ${currentPlayer}'s Turn`);
@@ -247,16 +247,15 @@ function checkWin(row, col) {
 }
 
 function checkDraw() {
-    for (let row = 0; row < boardSize; row++) {
-      for (let col = 0; col < boardSize; col++) {
-        if (board[row][col] === "") {
-          return false; 
-        }
+  for (let row = 0; row < boardSize; row++) {
+    for (let col = 0; col < boardSize; col++) {
+      if (board[row][col] === "") {
+        return false; 
       }
     }
-    return true; 
   }
-  
+  return true; 
+}
 
 function showStatus(message) {
   statusElement.querySelector(".turn").textContent = message;
