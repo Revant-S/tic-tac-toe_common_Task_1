@@ -3,9 +3,9 @@ This game has 3 board Options 3x3,4x4,5x5 and time formats of 5 sec,10sec,15sec,
 
 
 ## How to Play
-Access the Game: Visit the hosted Tic-Tac-Toe game here.
+Access the Game: Visit the hosted Tic-Tac-Toe game on this link : https://revant-s.github.io/tic-tac-toe_common_Task_1/
 Or just clone the repo and open it in the live server to avoid cors issues
 
 ## Technologies Used: HTML, CSS, JavaScript.
 
-GitHub Hosting: The game is hosted on GitHub Pages. Access it here.
+GitHub Hosting: The game is hosted on GitHub Pages. 
